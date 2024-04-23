@@ -127,6 +127,7 @@ MonoBehaviour:
   banking: 0.1
   maxSpeed: 5
   maxForce: 10
+  stop: 0
 --- !u!114 &46125417710132193
 MonoBehaviour:
   m_ObjectHideFlags: 0

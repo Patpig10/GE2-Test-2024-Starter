@@ -10,11 +10,7 @@ public class creatre_creatures : MonoBehaviour
     public Transform parentSegmentsTo = null;
     public bool makeRotator = false;
 
-    public bool scaleFins = true;
-
-    // Changes the position of the fins
-    public float finRotatorOffset = 0.0f;
-
+  
     public float partOffset = 0.0f;
 
     [Range(0.0f, Mathf.PI * 2.0f)]
@@ -41,13 +37,10 @@ public class creatre_creatures : MonoBehaviour
     public GameObject headPrefab;
     public GameObject bodyPrefab;
     public GameObject tailPrefab;
-   // public GameObject leftFinPrefab;
-    //public GameObject rightFinPrefab;
+  
     public GameObject seatPrefab;
 
-    public float finRotationOffset = 20.0f;
-
-    public string finList;
+ 
 
     public float lengthVariation = 0;
 
@@ -62,10 +55,7 @@ public class creatre_creatures : MonoBehaviour
         else
         {
             GameObject part = GameObject.Instantiate<GameObject>(prefab);
-            //if (!part.GetComponent<Renderer>().material.name.Contains("Trans"))
-            //{
-            //    part.GetComponent<Renderer>().material.color = Color.black;
-            //}
+          
             bodyParts[key] = part;
             return part;
         }
@@ -99,12 +89,12 @@ public class creatre_creatures : MonoBehaviour
 
     public void CreateCreature()
     {
-        string[] fla = finList.Split(',');
+    
         List<CreaturePart> creatureParts = CreateCreatureParams();
         Gizmos.color = Color.yellow;
         Boid boid = null;
 
-        int finNumber = 0;
+     
         for (int i = 0; i < creatureParts.Count; i++)
         {
             CreaturePart cp = creatureParts[i];
@@ -132,19 +122,13 @@ public class creatre_creatures : MonoBehaviour
                 }
             }
 
-            //  Utilities.SetUpAnimators(part, boid);
+           
 
             part.transform.localScale = new Vector3(cp.size * part.transform.localScale.x, cp.size * part.transform.localScale.y, cp.size * part.transform.localScale.z);
             part.transform.rotation = transform.rotation;
 
 
-            // Make fins if required            
-            if (System.Array.Find(fla, p => p == "" + i) != null)
-            {
-                float scale = cp.size / ((finNumber / 2) + 1);
-
-                finNumber++;
-            }
+           
         }
     }
 
@@ -172,7 +156,7 @@ public class creatre_creatures : MonoBehaviour
             }
             else
             {
-                partSize = verticalSize * Mathf.Abs(Mathf.Sin(theta)); // Never used! + (verticalSize * lengthVariation * UnityEngine.Random.Range(0.0f, 1.0f));
+                partSize = verticalSize * Mathf.Abs(Mathf.Sin(theta)); 
                 theta += thetaInc;
             }
             pos -= ((((lastPartSize + partSize) / 2.0f) + gap) * transform.forward);
@@ -206,10 +190,10 @@ public class creatre_creatures : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        // For some reason this method is being called twice
+        
         if (transform.childCount == 0)
         {
-            CreateCreature();
+           CreateCreature();
         }
     }
 
@@ -221,7 +205,10 @@ public class creatre_creatures : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+           // CreateCreature();
+        }
     }
 
 }
@@ -231,7 +218,7 @@ struct CreaturePart
     public Vector3 position;
     public Quaternion rotation;
     public float size;
-    public enum Part { head, body, fin, tail, tenticle, seat };
+    public enum Part { head, body, tail, tenticle, seat };
     public Part part;
     public GameObject prefab;
 

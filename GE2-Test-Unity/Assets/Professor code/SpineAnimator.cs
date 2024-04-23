@@ -79,5 +79,6 @@ public class SpineAnimator : MonoBehaviour {
                 , Time.deltaTime * angularBondDamping);
 
         }
+        ChangeColor();
     }
 }
