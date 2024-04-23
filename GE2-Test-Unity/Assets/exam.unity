@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 1382551200}
   - component: {fileID: 1382551199}
   - component: {fileID: 1382551198}
+  - component: {fileID: 1382551201}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -521,13 +522,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382551197}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 6.5, z: -60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1382551201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382551197}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d5385dd24c154408bdee466d3ece9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1384091588}
 --- !u!1 &1384091583
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +554,6 @@ GameObject:
   - component: {fileID: 1384091587}
   - component: {fileID: 1384091586}
   - component: {fileID: 1384091585}
-  - component: {fileID: 1384091584}
   - component: {fileID: 1384091589}
   - component: {fileID: 1384091590}
   m_Layer: 0
@@ -550,27 +563,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1384091584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384091583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc79b938da3ef48959773e1a3ba59d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 1
-  force: {x: 0, y: 0, z: 0}
-  boid: {fileID: 0}
-  frequency: 0.3
-  radius: 10
-  theta: 0
-  amplitude: 80
-  distance: 5
-  axis: 1
 --- !u!114 &1384091585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,8 +653,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentSegmentsTo: {fileID: 1384091588}
   makeRotator: 1
-  scaleFins: 1
-  finRotatorOffset: 0
   partOffset: 0
   theta: 3.34
   frequency: 7.1
@@ -679,8 +669,6 @@ MonoBehaviour:
   tailPrefab: {fileID: 3551275389896014359, guid: 9a9d6a98a6140a34ea1d4cb729bd9ee5,
     type: 3}
   seatPrefab: {fileID: 0}
-  finRotationOffset: 20
-  finList: 
   lengthVariation: 0
   seatPosition: 5
 --- !u!114 &1384091590
@@ -1049,11 +1037,11 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1382551200}
   - {fileID: 1678432558}
   - {fileID: 6224589044775102852}
   - {fileID: 1210835049717313097}
   - {fileID: 1113860505}
   - {fileID: 877812949}
   - {fileID: 3169662901206483320}
+  - {fileID: 1382551200}
   - {fileID: 1384091588}
