@@ -18,7 +18,7 @@ public class SpineAnimator : MonoBehaviour {
         for (int i = 0; i < transform.childCount; i++)
         {
             bones[i] = transform.GetChild(i).gameObject;
-        }
+         }
 
 
         if (bones != null)
@@ -37,9 +37,22 @@ public class SpineAnimator : MonoBehaviour {
 
                 offsets.Add(offset);
             }
+           
         }
+
 	}
 	
+        IEnumerator ChangeColor()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(10);
+            foreach (GameObject bone in bones)
+            {
+                bone.GetComponent<MeshRenderer>().material.color = Random.ColorHSV();
+            }
+        }
+    }
 	// Update is called once per frame
 	void FixedUpdate () {
         for (int i = 0; i < bones.Length; i++)

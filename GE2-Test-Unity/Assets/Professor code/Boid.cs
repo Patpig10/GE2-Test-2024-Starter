@@ -18,6 +18,7 @@ public class Boid : MonoBehaviour
     public float banking = 0.1f;
     public float maxSpeed = 5.0f;
     public float maxForce = 10.0f;
+    public bool stop = false;
 
     public void OnDrawGizmos()
     {
@@ -103,19 +104,38 @@ public class Boid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        force = Calculate();
-        acceleration = force / mass;
-        velocity += acceleration * Time.deltaTime;
-
-        velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
-        
-        if (velocity.magnitude > 0)
+        if(Input.GetKeyDown("p"))
         {
-            Vector3 tempUp = Vector3.Lerp(transform.up, Vector3.up + (acceleration * banking), Time.deltaTime * 3.0f);
-            transform.LookAt(transform.position + velocity, tempUp);
+            stop = true;
+        }
+        if (Input.GetKeyDown("o"))
+        {
+            stop = false;
+        }
 
-            transform.position += velocity * Time.deltaTime;
-            velocity *= (1.0f - (damping * Time.deltaTime));
+        if (stop == false)
+        {
+
+
+            force = Calculate();
+            acceleration = force / mass;
+            velocity += acceleration * Time.deltaTime;
+
+            velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
+
+            if (velocity.magnitude > 0)
+            {
+                Vector3 tempUp = Vector3.Lerp(transform.up, Vector3.up + (acceleration * banking), Time.deltaTime * 3.0f);
+                transform.LookAt(transform.position + velocity, tempUp);
+
+                transform.position += velocity * Time.deltaTime;
+                velocity *= (1.0f - (damping * Time.deltaTime));
+            }
         }
     }
+
+  
+      
+       
+  
 }

@@ -12,5 +12,7 @@ EditorBuildSettings:
       type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: e6e6c2a50453dfa4b97190bbd9e34809,
       type: 2}
+    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: a29070ae58d2b884d87e6c3bb01dc7a5,
+      type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: a0260593d07015c4ab55ffd5ea68bd77,
       type: 2}

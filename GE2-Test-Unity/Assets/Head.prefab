@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 6069413175670625393}
   - component: {fileID: 1104491367550617090}
   - component: {fileID: 574145505883342104}
-  - component: {fileID: 4601300544890367128}
-  - component: {fileID: 2957609022737694844}
+  - component: {fileID: 46125417710132193}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -115,7 +114,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037559369857374643}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca72f3762818ae24991bed08eecca47a, type: 3}
   m_Name: 
@@ -128,26 +127,7 @@ MonoBehaviour:
   banking: 0.1
   maxSpeed: 5
   maxForce: 10
---- !u!114 &4601300544890367128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037559369857374643}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06274b6a203665440b22f81d66fe9d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bones:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  bondDamping: 25
-  angularBondDamping: 25
---- !u!114 &2957609022737694844
+--- !u!114 &46125417710132193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,4 +147,4 @@ MonoBehaviour:
   theta: 0
   amplitude: 80
   distance: 5
-  axis: 1
+  axis: 0

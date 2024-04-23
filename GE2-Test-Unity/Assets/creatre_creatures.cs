@@ -80,6 +80,9 @@ public class creatre_creatures : MonoBehaviour
             foreach (CreaturePart cp in creatureParts)
             {
                 Gizmos.DrawWireSphere(cp.position, cp.size * 0.5f);
+               
+
+
             }
             LogParts(creatureParts);
         }
